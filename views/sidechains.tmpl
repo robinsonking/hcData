@@ -1,0 +1,45 @@
+{{define "sidechains"}}
+<!DOCTYPE html>
+<html lang="en">
+
+{{template "html-head" "Decred Side Chains"}}
+<body class="{{ theme }}">
+    {{template "navbar" . }}
+    <div class="container main" data-controller="time">
+        <h4><span title="side chain blocks known to this dcrdata instance"><img class="h30 p2tb" src="/images/dcr-side-chains.svg" alt="side chain"> Side Chain Blocks</span></h4>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table striped table-responsive-sm" id="sideblockstable">
+                    <thead>
+                        <tr>
+                            <th>Height</th>
+                            <th>PoS Approved</th>
+                            <th>Parent</th>
+                            <th>Child</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{range .Data}}
+                        <tr id="{{ .Height }}">
+                            <td class="mono fs15"><a href="/block/{{.Hash}}" class="fs16 height">{{ .Height }}</a></td>
+                            <td>{{.IsValid}}</td>
+                            <td class="break-word"><a href="/block/{{.PrevHash}}" class="hash lh1rem">{{ .PrevHash }}</a></td>
+                            {{if .NextHash }}
+                            <td class="break-word"><a href="/block/{{.NextHash}}" class="hash lh1rem">{{ .NextHash }}</a></td>
+                            {{else}}
+                            <td title="This block is the tip of its chain.">none</td>
+                            {{end}}
+                        </tr>
+                    {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{{ template "footer" . }}
+
+</body>
+</html>
+{{ end }}
