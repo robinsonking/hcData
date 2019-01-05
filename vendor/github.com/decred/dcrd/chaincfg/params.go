@@ -224,7 +224,7 @@ type Params struct {
 
 	// DNSSeeds defines a list of DNS seeds for the network that are used
 	// as one method to discover peers.
-	DNSSeeds []DNSSeed
+	DNSSeeds []string
 
 	// GenesisBlock defines the first block of the chain.
 	GenesisBlock *wire.MsgBlock
@@ -359,6 +359,9 @@ type Params struct {
 	// The number of nodes to check.
 	BlockUpgradeNumToCheck uint64
 
+	// Mempool parameters
+	RelayNonStdTxs bool
+
 	// AcceptNonStdTxs is a mempool param to either accept and relay
 	// non standard txs to the network or reject them
 	AcceptNonStdTxs bool
@@ -368,16 +371,22 @@ type Params struct {
 	NetworkAddressPrefix string
 
 	// Address encoding magics
-	PubKeyAddrID     [2]byte // First 2 bytes of a P2PK address
-	PubKeyHashAddrID [2]byte // First 2 bytes of a P2PKH address
-	PKHEdwardsAddrID [2]byte // First 2 bytes of an Edwards P2PKH address
-	PKHSchnorrAddrID [2]byte // First 2 bytes of a secp256k1 Schnorr P2PKH address
-	ScriptHashAddrID [2]byte // First 2 bytes of a P2SH address
-	PrivateKeyID     [2]byte // First 2 bytes of a WIF private key
+	PubKeyAddrID      [2]byte // First 2 bytes of a P2PK address
+	PubKeyBlissAddrID [2]byte // First 2 bytes of a P2PK bliss address
+	PubKeyHashAddrID  [2]byte // First 2 bytes of a P2PKH address
+	PKHEdwardsAddrID  [2]byte // First 2 bytes of an Edwards P2PKH address
+	PKHSchnorrAddrID  [2]byte // First 2 bytes of a secp256k1 Schnorr P2PKH address
+	PKHBlissAddrID    [2]byte // First 2 bytes of a Bliss P2PKH address
+	ScriptHashAddrID  [2]byte // First 2 bytes of a P2SH address
+	PrivateKeyID      [2]byte // First 2 bytes of a WIF private key
 
 	// BIP32 hierarchical deterministic extended key magics
 	HDPrivateKeyID [4]byte
 	HDPublicKeyID  [4]byte
+
+	// BIP44 coin type used in the hierarchical deterministic path for
+	// address generation.
+	HDCoinType uint32
 
 	// SLIP-0044 registered coin type used for BIP44, used in the hierarchical
 	// deterministic path for address generation.
@@ -474,6 +483,9 @@ type Params struct {
 	// block height 1. If there are no payouts to be given, set this
 	// to an empty slice.
 	BlockOneLedger []*TokenPayout
+
+	OmniMoneyReceive string
+	OmniStartHeight uint64
 }
 
 var (

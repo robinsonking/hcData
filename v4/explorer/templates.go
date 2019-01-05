@@ -17,7 +17,7 @@ import (
 	"github.com/decred/dcrd/chaincfg"
 	"github.com/decred/dcrd/dcrec"
 	"github.com/decred/dcrd/dcrutil"
-	"github.com/decred/dcrdata/v4/db/dbtypes"
+	"github.com/decred/hcData/v4/db/dbtypes"
 	humanize "github.com/dustin/go-humanize"
 )
 

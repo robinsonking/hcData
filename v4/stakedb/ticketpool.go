@@ -95,7 +95,7 @@ func NewTicketPool(dataDir, dbSubDir string) (*TicketPool, error) {
 	var poolDiffs []PoolDiffDBItem
 	poolDiffs, err = LoadAllPoolDiffs(db)
 	if err != nil {
-//		return nil, fmt.Errorf("failed LoadAllPoolDiffs: %v", err)
+		return nil, fmt.Errorf("failed LoadAllPoolDiffs: %v", err)
 	}
 
 	if len(poolDiffs) > 0 {
@@ -206,11 +206,10 @@ func LoadAllPoolDiffs(db *badger.DB) ([]PoolDiffDBItem, error) {
 			// Don't waste time with a copy since we are going to read the data in
 			// this transaction.
 			var hashReader bytes.Reader
-			_, errTx := item.Value()
-			/*func(v []byte) error {
+			errTx := item.Value(func(v []byte) error {
 				hashReader.Reset(v)
 				return nil
-			}*/
+			})
 			if errTx != nil {
 				return fmt.Errorf("key [%x]. Error while fetching value [%v]",
 					item.Key(), errTx)
@@ -323,7 +322,7 @@ func storeDiffs(db *badger.DB, diffs []*PoolDiff, heights []int64) error {
 		err = txn.Set(heightBytes[:], poolDiffBuffer.Bytes())
 		// If this transaction got too big, commit and make a new one
 		if err == badger.ErrTxnTooBig {
-			if err = txn.Commit(nil); err != nil {
+			if err = txn.Commit(); err != nil {
 				txn.Discard()
 				return err
 			}
@@ -339,13 +338,14 @@ func storeDiffs(db *badger.DB, diffs []*PoolDiff, heights []int64) error {
 		}
 		//poolDiffBuffer.Reset()
 	}
-	return txn.Commit(nil)
+	return txn.Commit()
 }
 
 func (tp *TicketPool) storeDiff(diff *PoolDiff, height int64) error {
 	return storeDiff(tp.diffDB, diff, height)
 }
 
+// fetchDiff retrieves the diff at the specified height from the on-disk DB.
 // fetchDiff retrieves the diff at the specified height from the on-disk DB.
 func (tp *TicketPool) fetchDiff(height int64) (*PoolDiffDBItem, error) {
 	var heightBytes [8]byte
@@ -362,10 +362,10 @@ func (tp *TicketPool) fetchDiff(height int64) (*PoolDiffDBItem, error) {
 		// Don't waste time with a copy since we are going to read the data in
 		// this transaction.
 		var hashReader bytes.Reader
-		_, errTx = item.Value(/*func(v []byte) error {
+		errTx = item.Value(func(v []byte) error {
 			hashReader.Reset(v)
 			return nil
-		}*/)
+		})
 		if errTx != nil {
 			return fmt.Errorf("key [%x]. Error while fetching value [%v]",
 				item.Key(), errTx)

@@ -12,12 +12,12 @@ import (
 
 	"github.com/decred/dcrd/chaincfg/chainhash"
 	"github.com/decred/dcrd/dcrutil"
-	apitypes "github.com/decred/dcrdata/v4/api/types"
-	"github.com/decred/dcrdata/v4/blockdata"
-	"github.com/decred/dcrdata/v4/db/dbtypes"
-	"github.com/decred/dcrdata/v4/explorer"
-	"github.com/decred/dcrdata/v4/rpcutils"
-	"github.com/decred/dcrdata/v4/txhelpers"
+	apitypes "github.com/decred/hcData/v4/api/types"
+	"github.com/decred/hcData/v4/blockdata"
+	"github.com/decred/hcData/v4/db/dbtypes"
+	"github.com/decred/hcData/v4/explorer"
+	"github.com/decred/hcData/v4/rpcutils"
+	"github.com/decred/hcData/v4/txhelpers"
 )
 
 const (
@@ -206,10 +206,6 @@ func (db *wiredDB) resyncDB(ctx context.Context, blockGetter rpcutils.BlockGette
 		default:
 		}
 
-		if i == 764 {
-			fmt.Println("ttt")
-
-		}
 		log.Infof("Rescanning  at height %d.", i)
 		//log.Warn("Rescanning  at height %d.", i)
 		// Either fetch the block or wait for a signal that it is ready

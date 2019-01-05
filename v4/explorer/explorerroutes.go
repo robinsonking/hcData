@@ -21,9 +21,9 @@ import (
 	"github.com/decred/dcrd/dcrjson"
 	"github.com/decred/dcrd/dcrutil"
 	"github.com/decred/dcrd/txscript"
-	"github.com/decred/dcrdata/v4/db/agendadb"
-	"github.com/decred/dcrdata/v4/db/dbtypes"
-	"github.com/decred/dcrdata/v4/txhelpers"
+	"github.com/decred/hcData/v4/db/agendadb"
+	"github.com/decred/hcData/v4/db/dbtypes"
+	"github.com/decred/hcData/v4/txhelpers"
 	humanize "github.com/dustin/go-humanize"
 )
 

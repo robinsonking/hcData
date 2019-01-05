@@ -10,8 +10,8 @@ import (
 
 	"github.com/decred/dcrd/dcrjson"
 	"github.com/decred/dcrd/wire"
-	apitypes "github.com/decred/dcrdata/v4/api/types"
-	"github.com/decred/dcrdata/v4/blockdata"
+	apitypes "github.com/decred/hcData/v4/api/types"
+	"github.com/decred/hcData/v4/blockdata"
 )
 
 // BlockDataToMemdb models the block data and block data basic as maps

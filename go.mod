@@ -1,4 +1,4 @@
-module github.com/decred/dcrdata/v4
+module github.com/decred/hcData/v4
 
 require (
 	github.com/AndreasBriese/bbloom v0.0.0-20180913140656-343706a395b7 // indirect

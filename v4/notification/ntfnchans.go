@@ -8,10 +8,10 @@ import (
 	"github.com/decred/dcrd/chaincfg/chainhash"
 	"github.com/decred/dcrd/dcrutil"
 
-	"github.com/decred/dcrdata/v4/api/insight"
-	"github.com/decred/dcrdata/v4/explorer"
-	"github.com/decred/dcrdata/v4/mempool"
-	"github.com/decred/dcrdata/v4/txhelpers"
+	"github.com/decred/hcData/v4/api/insight"
+	"github.com/decred/hcData/v4/explorer"
+	"github.com/decred/hcData/v4/mempool"
+	"github.com/decred/hcData/v4/txhelpers"
 )
 
 const (

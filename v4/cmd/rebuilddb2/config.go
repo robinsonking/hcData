@@ -15,7 +15,7 @@ import (
 	flags "github.com/btcsuite/go-flags"
 	"github.com/decred/dcrd/chaincfg"
 	"github.com/decred/dcrd/dcrutil"
-	"github.com/decred/dcrdata/v4/netparams"
+	"github.com/decred/hcData/v4/netparams"
 )
 
 const (

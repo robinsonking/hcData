@@ -18,9 +18,9 @@ import (
 	"time"
 
 	"github.com/decred/dcrd/rpcclient"
-	"github.com/decred/dcrdata/v4/db/dcrpg"
-	"github.com/decred/dcrdata/v4/rpcutils"
-	"github.com/decred/dcrdata/v4/stakedb"
+	"github.com/decred/hcData/v4/db/dcrpg"
+	"github.com/decred/hcData/v4/rpcutils"
+	"github.com/decred/hcData/v4/stakedb"
 	"github.com/decred/slog"
 )
 

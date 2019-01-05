@@ -38,7 +38,7 @@ Only submit a PR once the intended edits are either done or nearing completion. 
 
 ## Git Workflow
 
-1. Fork the repository on GitHub.  Just click the little Fork button at https://github.com/decred/dcrdata
+1. Fork the repository on GitHub.  Just click the little Fork button at https://github.com/decred/hcData
 
 ![image](https://user-images.githubusercontent.com/6109680/47858277-b8910480-ddb9-11e8-9088-a4d1c7b0805d.png)
 
@@ -54,7 +54,7 @@ Setting your master branch to track this repository makes keeping everything up-
 The rest of this workflow guide will assume that you have completed this step. 
 
 ```sh
-git remote add upstream https://github.com/decred/dcrdata.git
+git remote add upstream https://github.com/decred/hcData.git
 git fetch upstream
 git branch -u upstream/master master
 ```
@@ -139,7 +139,7 @@ Excellent [PR guidelines](https://github.com/kubernetes/community/blob/master/co
 10. Receive feedback and make changes
 
 You will typically receive feedback from other developers. Before responding, take a moment to review the 
-[Code of Conduct](https://github.com/decred/dcrdata/blob/master/CODE_OF_CONDUCT.md). 
+[Code of Conduct](https://github.com/decred/hcData/blob/master/CODE_OF_CONDUCT.md). 
 
 Work through the comments and resolve any confusion with others. Make whatever revisions are necessary.
 

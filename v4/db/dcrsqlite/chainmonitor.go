@@ -10,8 +10,8 @@ import (
 	"sync"
 
 	"github.com/decred/dcrd/chaincfg/chainhash"
-	"github.com/decred/dcrdata/v4/blockdata"
-	"github.com/decred/dcrdata/v4/txhelpers"
+	"github.com/decred/hcData/v4/blockdata"
+	"github.com/decred/hcData/v4/txhelpers"
 )
 
 // ChainMonitor handles change notifications from the node client

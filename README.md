@@ -1,8 +1,8 @@
 # dcrdata
 
 [![Build Status](https://img.shields.io/travis/decred/dcrdata.svg)](https://travis-ci.org/decred/dcrdata)
-[![Latest tag](https://img.shields.io/github/tag/decred/dcrdata.svg)](https://github.com/decred/dcrdata/tags)
-[![Go Report Card](https://goreportcard.com/badge/github.com/decred/dcrdata)](https://goreportcard.com/report/github.com/decred/dcrdata)
+[![Latest tag](https://img.shields.io/github/tag/decred/dcrdata.svg)](https://github.com/decred/hcData/tags)
+[![Go Report Card](https://goreportcard.com/badge/github.com/decred/hcData)](https://goreportcard.com/report/github.com/decred/hcData)
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 
 dcrdata is an original [Decred's](https://www.decred.org/) block explorer, with
@@ -144,7 +144,7 @@ NOTE: The following instructions assume a Unix-like shell (e.g. bash).
   this is no longer necessary with go module.
 
   ```sh
-  git clone https://github.com/decred/dcrdata $GOPATH/src/github.com/decred/dcrdata
+  git clone https://github.com/decred/hcData $GOPATH/src/github.com/decred/hcData
   ```
 
 - Install a C compiler. The sqlite driver uses cgo, which requires a C compiler
@@ -231,8 +231,8 @@ desireable to set the "pre" and "dev" values to different strings, such as
 
 ```sh
 GO111MODULE=on go build -ldflags \
-    "-X github.com/decred/dcrdata/v4/version.appPreRelease=beta \
-     -X github.com/decred/dcrdata/v4/version.appBuild=`git rev-parse --short HEAD`"
+    "-X github.com/decred/hcData/v4/version.appPreRelease=beta \
+     -X github.com/decred/hcData/v4/version.appBuild=`git rev-parse --short HEAD`"
 ```
 
 This produces a string like `dcrdata version 3.1.0-beta+86cc62a (Go version go1.11)`.
@@ -253,7 +253,7 @@ executable. Set read-only permissions as appropriate.
 Update the repository (assuming you have `master` checked out in `GOPATH`):
 
 ```sh
-cd $GOPATH/src/github.com/decred/dcrdata
+cd $GOPATH/src/github.com/decred/hcData
 git pull origin master
 ```
 
@@ -849,7 +849,7 @@ of objects implementing the `MempoolDataSaver` interface.
 
 ## Plans
 
-See the GitHub issue tracker and the [project milestones](https://github.com/decred/dcrdata/milestones).
+See the GitHub issue tracker and the [project milestones](https://github.com/decred/hcData/milestones).
 
 ## Contributing
 
@@ -860,7 +860,7 @@ here's the gist of it:
 2. Create a branch for your work (`git checkout -b cool-stuff`).
 3. Code something great.
 4. Commit and push to your repo.
-5. Create a [pull request](https://github.com/decred/dcrdata/compare).
+5. Create a [pull request](https://github.com/decred/hcData/compare).
 
 **DO NOT merge from master to your feature branch; rebase.**
 

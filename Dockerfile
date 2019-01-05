@@ -2,7 +2,7 @@ FROM golang:1.11-alpine3.8
 RUN apk update && apk add vim tree lsof bash git gcc musl-dev
 ENV GOPATH=/home/decred/go
 ENV PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$GOPATH/bin
-ENV DCRSRC_PATH=$GOPATH/src/github.com/decred/dcrdata/
+ENV DCRSRC_PATH=$GOPATH/src/github.com/decred/hcData/
 ENV GO111MODULE=on
 RUN adduser -s /bin/bash -D -h /home/decred decred && chown -R decred:decred /home/decred
 WORKDIR $DCRSRC_PATH
@@ -23,4 +23,4 @@ ENTRYPOINT ./dcrdata
 # running
 # docker run -ti --rm decred/dcrdata
 # or if attaching source volume and developing interactively
-#  docker run -ti --entrypoint=/bin/bash -v ${PWD}:${PWD}:/home/decred/go/src/github.com/decred/dcrdata --rm decred/dcrdata
+#  docker run -ti --entrypoint=/bin/bash -v ${PWD}:${PWD}:/home/decred/go/src/github.com/decred/hcData --rm decred/dcrdata

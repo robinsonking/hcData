@@ -15,11 +15,13 @@ import (
 var MainNetParams = Params{
 	Name:        "mainnet",
 	Net:         wire.MainNet,
-	DefaultPort: "9108",
-	DNSSeeds: []DNSSeed{
-		{"mainnet-seed.decred.mindcry.org", true},
-		{"mainnet-seed.decred.netpurgatory.com", true},
-		{"mainnet-seed.decred.org", true},
+	DefaultPort: "14008",
+	DNSSeeds: []string{
+		"mainnet1.h.cash",
+		"mainnet2.h.cash",
+		"mainnet3.h.cash",
+		"mainnet4.h.cash",
+		"mainnet5.h.cash",
 	},
 
 	// Chain parameters

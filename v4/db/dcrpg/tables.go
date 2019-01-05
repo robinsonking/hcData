@@ -10,8 +10,8 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/decred/dcrdata/v4/db/dbtypes"
-	"github.com/decred/dcrdata/v4/db/dcrpg/internal"
+	"github.com/decred/hcData/v4/db/dbtypes"
+	"github.com/decred/hcData/v4/db/dcrpg/internal"
 )
 
 var createTableStatements = map[string]string{

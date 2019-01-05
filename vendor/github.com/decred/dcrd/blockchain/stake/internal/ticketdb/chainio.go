@@ -338,6 +338,9 @@ func DbPutBestState(dbTx database.Tx, bcs BestChainState) error {
 	// Serialize the current best chain state.
 	serializedData := serializeBestChainState(bcs)
 
+	test := bcs.Hash.String()
+	fmt.Println(test)
+
 	// Store the current best chain state into the database.
 	return dbTx.Metadata().Put(dbnamespace.StakeChainStateKeyName, serializedData)
 }

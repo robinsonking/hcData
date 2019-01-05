@@ -136,21 +136,22 @@ var genesisCoinbaseTxLegacy = wire.MsgTx{
 }
 
 // TestNet2 ------------------------------------------------------------------------
+var testNet2GenesisMerkleRoot = genesisCoinbaseTxLegacy.TxHash()
 
 // testNet2GenesisBlock defines the genesis block of the block chain which
 // serves as the public transaction ledger for the test network (version 3).
 var testNet2GenesisBlock = wire.MsgBlock{
 	Header: wire.BlockHeader{
-		Version:      6,
+		Version:      4,
 		PrevBlock:    chainhash.Hash{},
-		MerkleRoot:   genesisCoinbaseTx.TxHash(),
-		Timestamp:    time.Unix(1533513600, 0), // 2018-08-06 00:00:00 +0000 UTC
-		Bits:         0x1e00ffff,               // Difficulty 1 [000000ffff000000000000000000000000000000000000000000000000000000]
+		MerkleRoot:   testNet2GenesisMerkleRoot,
+		Timestamp:    time.Unix(1522944000, 0), // 2018-04-05 TestNet1
+		Bits:         0x1e00ffff,
 		SBits:        20000000,
 		Nonce:        0x18aea41a,
-		StakeVersion: 6,
+		StakeVersion: 0,
 	},
-	Transactions: []*wire.MsgTx{&genesisCoinbaseTx},
+	Transactions: []*wire.MsgTx{&genesisCoinbaseTxLegacy},
 }
 
 // testNet2GenesisHash is the hash of the first block in the block chain for the

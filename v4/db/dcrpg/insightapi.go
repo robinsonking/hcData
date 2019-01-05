@@ -9,10 +9,10 @@ import (
 
 	"github.com/decred/dcrd/dcrjson"
 	"github.com/decred/dcrd/dcrutil"
-	apitypes "github.com/decred/dcrdata/v4/api/types"
-	"github.com/decred/dcrdata/v4/db/dbtypes"
-	"github.com/decred/dcrdata/v4/rpcutils"
-	"github.com/decred/dcrdata/v4/txhelpers"
+	apitypes "github.com/decred/hcData/v4/api/types"
+	"github.com/decred/hcData/v4/db/dbtypes"
+	"github.com/decred/hcData/v4/rpcutils"
+	"github.com/decred/hcData/v4/txhelpers"
 )
 
 // GetRawTransaction gets a dcrjson.TxRawResult for the specified transaction

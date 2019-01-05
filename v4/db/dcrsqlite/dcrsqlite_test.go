@@ -6,7 +6,7 @@ This file contains package-related test-setup utils
 import (
 	"path/filepath"
 
-	"github.com/decred/dcrdata/v4/testutil"
+	"github.com/decred/hcData/v4/testutil"
 )
 
 // DBPathForTest produces path inside dedicated test folder for current test
