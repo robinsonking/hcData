@@ -20,9 +20,9 @@ type Params struct {
 // dcrd on the main network (wire.MainNet).
 var MainNetParams = Params{
 	Params:            &chaincfg.MainNetParams,
-	JSONRPCClientPort: "9109",
-	JSONRPCServerPort: "9110",
-	GRPCServerPort:    "9111",
+	JSONRPCClientPort: "14009",
+	JSONRPCServerPort: "14010",
+	GRPCServerPort:    "14011",
 }
 
 // TestNet3Params contains parameters specific running dcrwallet and
