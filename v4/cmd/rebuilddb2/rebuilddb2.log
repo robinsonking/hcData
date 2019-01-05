@@ -1,0 +1,3 @@
+[90m[29 Dec 18 17:40:12.26 +0800][0m [34mDEBUG[0m [main.InitLogger][log.go][55] rebuilddb logger started.
+[90m[29 Dec 18 17:40:12.26 +0800][0m [32m INFO[0m open F:\go\src\github.com\decred\dcrdata\v4\cmd\rebuilddb2\rebuilddb2.conf: The system cannot find the file specified.
+[90m[29 Dec 18 17:40:12.26 +0800][0m [31mERROR[0m open F:\go\src\github.com\decred\dcrdata\v4\cmd\rebuilddb2\rebuilddb2.conf: The system cannot find the file specified.
