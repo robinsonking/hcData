@@ -25,7 +25,7 @@ var MainNetParams = Params{
 	GRPCServerPort:    "14011",
 }
 
-// TestNet3Params contains parameters specific running dcrwallet and
+// TestNet2Params contains parameters specific running dcrwallet and
 // dcrd on the test network (version 3) (wire.TestNet3).
 var TestNet2Params = Params{
 	Params:            &chaincfg.TestNet2Params,

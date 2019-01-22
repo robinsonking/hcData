@@ -179,8 +179,8 @@ func loadConfig() (*config, error) {
 	activeNet = &netparams.MainNetParams
 	activeChain = &chaincfg.MainNetParams
 	if cfg.TestNet {
-		activeNet = &netparams.TestNet3Params
-		activeChain = &chaincfg.TestNet3Params
+		activeNet = &netparams.TestNet2Params
+		activeChain = &chaincfg.TestNet2Params
 		numNets++
 	}
 	if cfg.SimNet {

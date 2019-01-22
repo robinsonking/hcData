@@ -7,7 +7,7 @@ import (
 )
 
 func TestTestNet3Name(t *testing.T) {
-	netName := netName(&chaincfg.TestNet3Params)
+	netName := netName(&chaincfg.TestNet2Params)
 	if netName != "Testnet" {
 		t.Errorf(`Net name not "Testnet": %s`, netName)
 	}

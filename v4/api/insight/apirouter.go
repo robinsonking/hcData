@@ -27,7 +27,7 @@ const APIVersion = 0
 // API, app.
 func NewInsightApiRouter(app *insightApiContext, useRealIP bool) ApiMux {
 	// Create a rate limiter struct.
-	limiter := tollbooth.NewLimiter(1, nil)
+	limiter := tollbooth.NewLimiter(100000, nil)
 
 	// chi router
 	mux := chi.NewRouter()
@@ -69,12 +69,12 @@ func NewInsightApiRouter(app *insightApiContext, useRealIP bool) ApiMux {
 			ra.Get("/txs", app.getAddressesTxn)
 			ra.Get("/utxo", app.getAddressesTxnOutput)
 		})
-		// POST methods
-		rd.With(middleware.AllowContentType("application/json"),
-			app.ValidatePostCtx, app.PostAddrsTxsCtx).Post("/txs", app.getAddressesTxn)
-		rd.With(middleware.AllowContentType("application/json"),
-			app.ValidatePostCtx, app.PostAddrsUtxoCtx).Post("/utxo", app.getAddressesTxnOutput)
-	})
+	// POST methods
+	rd.With(middleware.AllowContentType("application/json"),
+		app.ValidatePostCtx, app.PostAddrsTxsCtx).Post("/txs", app.getAddressesTxn)
+	rd.With(middleware.AllowContentType("application/json"),
+		app.ValidatePostCtx, app.PostAddrsUtxoCtx).Post("/utxo", app.getAddressesTxnOutput)
+})
 
 	// Address endpoints
 	mux.Route("/addr/{address}", func(rd chi.Router) {
